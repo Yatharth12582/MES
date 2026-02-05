@@ -1,0 +1,19 @@
+ORG 0000H
+
+; Construct high byte (03H)
+CLR A
+ORL A, #01H
+ORL A, #02H
+MOV B, A
+
+; Construct low byte (6CH)
+CLR A
+ORL A, #40H
+ORL A, #20H
+ORL A, #08H
+ORL A, #04H
+ANL A, #6CH
+
+HERE: SJMP HERE
+
+END
